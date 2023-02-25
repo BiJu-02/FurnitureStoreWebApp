@@ -11,6 +11,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// USE FILEREADER FOR IMAGES...SAVE DATA URL STRING AT BACKEND
+
 // routes
 app.get("/", (req, res) => { res.send("app is running"); });
 app.use("/", saveBlog);

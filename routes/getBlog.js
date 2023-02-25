@@ -7,12 +7,12 @@ router.post("/getBlog", async (req, res) => {
     // try {
         if (req.body.data) {
                 fs.readFile(`${__dirname}/../blogs/${req.body.data.title}.txt`,
-                "utf8",
-                (err, data) => {
-                    if (err) { console.log(err); }
-                    else {res.send({blogContent:data}); }
-                },
-            );
+                    "utf8",
+                    (err, data) => {
+                        if (err) { console.log(err); }
+                        else {res.send({blogContent:data}); }
+                    },
+                );
         }
     // } catch {
     //     console.log("sed...anyways...");
