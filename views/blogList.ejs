@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Radiance Kitchens and Furnitures">
+   
+    <title>Radiance Kitchens and Wardrobes Blog - Stay Up-to-Date on the Latest Trends and Ideas for Your Dream Kitchen and Wardrobe</title>
+    <link rel="stylesheet" href="/css/our Blogs/ourBlogs.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+      <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+</head>
+
+<body>
+
+
+    <section id="nav">
+
+        
+        <div class="toggle">
+           <img src="/assets/images/home_page/icons8-close.svg" class="hidden" id="cancel">
+            <span class="bar1" id="bar1"></span>
+            <span class="bar1" id="bar2"></span>
+            <span class="bar1" id="bar3"></span>
+        </div>
+
+        <div class="mob_logo">
+            <a href="/index.html"><img src="/assets/images/home_page/radiance_logo.png" alt=""></a>
+        </div>
+
+        <div class="bar">
+
+            <div class="links nav_1">
+                <ul>
+                    <li><a href="./kitchenWardrobePage?kwType=k" class="nav_title">Kitchens</a></li>
+                    <li><a href="./kitchenWardrobePage?kwType=w" class="nav_title">Wardrobes</a></li>
+                </ul>
+            </div>
+            <div class="logo">
+                <a href="/index.html"><img src="/assets/images/home_page/radiance_logo.png" alt=""></a>
+            </div>
+            <div class="links">
+                <ul>
+
+                    <li><a href="./blogList" class="nav_title">Our blog</a></li>
+                    <li>
+                        <div class="dropdown">
+                            <button onclick="myFunction()" class="dropbtn">Company <i
+                                    class='bx bxs-chevron-down dropbtn'></i> </button>
+                            <div id="myDropdown" class="dropdown-content">
+                                <a href="/aboutus.html">About us</a>
+                                <a href="/history.html">History</a>
+                                <a href="/testimonials.html">Client Testimonials</a>
+                                <a href="/faq.html"> FAQs</a>
+                                <a href="/contactUs.html"> Contact Us</a>
+                            </div>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </section>
+
+
+   
+    <section id="main-sec">
+
+       <h4>Posts from our Blog</h4>
+
+     
+
+        <div class="cards-sec ">
+
+            <% blog.forEach((x) => { %>
+            
+            <div class="card animate__animated animate__fadeIn">
+                <div class="content">
+                    <div class="blog-thumbnail">
+                        <img src="<%= img[x._id.toString()] %>" alt="">
+                    </div>
+
+                    <div class="blog-name">
+                        <p><%= x.bHead %></p>
+                        <hr>
+                        <a href="https://radiancekitchens.com/radapi/blogPost?Id=<%= x._id.toString() %>"><p>Load More</p></a>
+                    </div>
+                </div>
+               
+            </div>
+
+            <% }); %>
+
+        </div>
+    </section>
+
+
+
+
+
+      <footer>
+        <div class="foot-logo">
+            <img src="/assets/images/home_page/radiance_logo.png" alt="">
+        </div>
+
+        <div class="foot-links">
+
+            <div class="col">
+                <a href="./kitchenWardrobePage?kwType=k">
+                    <h2>Kitchen</h2>
+                </a>
+
+                <a href="./kitchenWardrobePage?kwType=w">
+                    <h2>Wardrobe</h2>
+                </a>
+                <a href="./blogList">
+                    <h2>Our Blog</h2>
+                </a>
+            </div>
+
+            <div class="col">
+                <h2>Company</h2>
+                <a href="/aboutus.html">
+                    <p>About us</p>
+                </a>
+                <a href="/history.html">
+                    <p>History</p>
+                </a>
+                <a href="/testimonials.html">
+                    <p>Client Testimonial</p>
+                </a>
+                <a href="/faq.html">
+                    <p>Faqs</p>
+                </a>
+                <a href="/contactUs.html">
+                    <p>Contact us</p>
+                </a>
+
+
+            </div>
+
+            <div class="col">
+                <h2>Contact us</h2>
+
+                <p> +91 98505 60095</p>
+                <p>radiancekitchensofficials@gmail.com</p>
+
+
+            </div>
+
+            <div class="col">
+                <h2>Our socials</h2>
+
+                <a href="https://instagram.com/radiancekitchensandfurniture?igshid=YmMyMTA2M2Y="> <i
+                        class="fa-brands fa-square-instagram"></i></a>
+                <a
+                    href="https://www.facebook.com/214920678535903/posts/pfbid0CwHAoYt6YpgQf6ReM9rYjaU6eDjSLz2rpbfmNmSVtuoxQUm9HXf1FtLhwk7eeWjql/?mibextid=Nif5oz">
+                    <i class="fa-brands fa-square-facebook"></i></a>
+                <a href="https://www.linkedin.com/company/radiance-kitechens-furnitures/
+               "> <i class="fa-brands fa-linkedin"></i></a>
+                <a href="/contactUs.html"> <i class="fa-sharp fa-solid fa-envelope"></i></a>
+            </div>
+
+
+
+            <div class="col">
+                <h2>Locate our store <i class='bx bx-current-location'></i></h2>
+                <iframe class="map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30264.703866569707!2d73.80774527611592!3d18.524925794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf2c413fc991%3A0xe4bed2ae01d59dde!2sRadiance%20Kitchens%20and%20Furnitures!5e0!3m2!1sen!2sin!4v1677150696308!5m2!1sen!2sin"
+                    width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        </div>
+        </div>
+    </footer>
+
+    <script src="/src/home/nav.js"></script>
+    <script src="https://kit.fontawesome.com/489ebd9a8c.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

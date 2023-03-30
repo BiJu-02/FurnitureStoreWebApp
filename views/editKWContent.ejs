@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><% if (cont.kwType == "k") { %>
+                Kitchens
+                <% } else { %>
+                Wardrobes
+                <% } %></title>
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/Edit Kitchens/editKitchens.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="/src/home/kwContent.js"></script>
+    <link rel="stylesheet" href="/css/Edit Kitchens/popup.css">
+    <link rel="stylesheet" href="/css/home/swiper-bundle.min.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <script src="/src/EditKitchens/popup.js"></script>
+</head>
+<body onload="initPage('<%= cont.kwType %>', '<%= cont.kwSubType %>', '<%= cont.kwIdx %>')">
+    <section id="nav">
+
+        <div class="toggle">
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+        </div>
+
+        <div class="mob_logo">
+            <a href="./adminHome"><img src="/assets/images/home_page/radiance_logo.png" alt=""></a>
+        </div>
+
+        <div class="bar">
+
+            <div class="links nav_1">
+                <ul>
+                    <li><a href="./manageKWContent?kwType=k" class="nav_title">Kitchens</a></li>
+                    <li><a href="./manageKWContent?kwType=w" class="nav_title">Wardrobes</a></li>
+                </ul>
+            </div>
+            <div class="logo">
+                <a href="./adminHome"><img src="/assets/images/home_page/radiance_logo.png" alt=""></a>
+            </div>
+            <div class="links">
+                <ul>
+
+                    <li><a href="./adminHome" class="nav_title">Manage blog</a></li>
+                    <li><a href="./logOut" class="nav_title">Log Out</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+       
+        <div class="name">
+          
+            <i class='bx bx-edit Ebtn' onclick="customPromt(`Enter the name`,`text`,`contentTitle`)" ></i> 
+            <h2 id="contentTitle"><%= cont.kwTitle %></h2>
+        </div>
+
+        <section id="pop-up" class="hidden">
+
+            <div class="btn-box"><i class='close-btn bx bx-x'></i></div>
+            <div class="hidden" id="customPromt">
+        
+            
+                <div class="promt-text">
+                Enter your text here
+                </div>
+        
+                <div class="promt-form">
+                    
+                 <textarea name="" id="promt-input1" class="promt-input hidden" placeholder="Enter your text here"></textarea>
+                 <input type="file" class="promt-input hidden" id="promt-input2">
+                <button id="promt-btn">OK</button>
+               </div>
+           </div>
+         
+        </section>
+    
+    </section>
+
+  
+    
+    <section id="main-sec">
+       <h2>Choose the Thumbnail Image</h2>
+        <input type="file" id="Thumb-nail" onchange="loadThumb()">
+
+        <h2 id="heading"><%= cont.kwHead %></h2>
+        <a  onclick="customPromt(`Enter the heading`,`text`,`heading`)"><i class='bx bx-edit btn' ></i> </a>
+       
+        
+         
+    </section>
+
+    <section id="cor1">
+        <div class="swiper mySwiper container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide slide" id="cor1-img1"><%- img["00"] %><i class='bx bx-image-add' onclick="customPromt(`Choose the new image`,`image`,`cor1-img1`, 0, 0)"></i></div>
+              <div class="swiper-slide slide" id="cor1-img2"><%- img["01"] %><i class='bx bx-image-add' onclick="customPromt(`Choose the new image`,`image`,`cor1-img2`, 0, 1)"></i></div>
+              <div class="swiper-slide slide" id="cor1-img3"><%- img["02"] %><i class='bx bx-image-add' onclick="customPromt(`Choose the new image`,`image`,`cor1-img3`, 0, 2)"></i></div>
+              <div class="swiper-slide slide" id="cor1-img4"><%- img["03"] %><i class='bx bx-image-add' onclick="customPromt(`Choose the new image`,`image`,`cor1-img4`, 0, 3)"></i></div>
+              <div class="swiper-slide slide" id="cor1-img5"><%- img["04"] %><i class='bx bx-image-add' onclick="customPromt(`Choose the new image`,`image`,`cor1-img5`, 0, 4)"></i></div>
+          
+           
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+    </section>
+
+ 
+    <section id="context">
+        <h2 id="subHeading"><%= cont.kwSubHead %></h2>
+        <i class='bx bx-edit' onclick="customPromt(`Enter the subheding`,`text`,`subHeading`)" ></i> 
+        <p id="para1"><%= cont.kwPara1 %></p>
+        <i class='bx bx-edit'  onclick="customPromt(`Enter the first paragraph`,`text`,'para1')"></i> 
+    </section>
+
+    <section id="cor1">
+        <div class="swiper mySwiper container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide slide" id="cor2-img1"><%- img["10"] %><i class='bx bx-image-add' onclick="customPromt(`Choose the new image`,`image`,`cor2-img1`, 1, 0)"></i></div>
+              <div class="swiper-slide slide" id="cor2-img2"><%- img["11"] %><i class='bx bx-image-add' onclick="customPromt(`Choose the new image`,`image`,`cor2-img2`, 1, 1)"></i></div>
+              <div class="swiper-slide slide" id="cor2-img3"><%- img["12"] %><i class='bx bx-image-add' onclick="customPromt(`Choose the new image`,`image`,`cor2-img3`, 1, 2)"></i></div>
+              <div class="swiper-slide slide" id="cor2-img4"><%- img["13"] %><i class='bx bx-image-add' onclick="customPromt(`Choose the new image`,`image`,`cor2-img4`, 1, 3)"></i></div>
+              <div class="swiper-slide slide" id="cor2-img5"><%- img["14"] %><i class='bx bx-image-add' onclick="customPromt(`Choose the new image`,`image`,`cor2-img5`, 1, 4)"></i></div>
+
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+    </section>
+
+
+    <section id="context">
+        
+        <p id="para2"><%= cont.kwPara2 %></p>
+        <i class='bx bx-edit' onclick="customPromt(`Enter the second Para`,`text`,`para2`)"></i> 
+    </section>
+
+
+
+    <div class="final">
+        <button onclick="saveContent()"> Submit</button>
+    </div>
+
+    
+    
+
+    <script src="/src/home/slider_script.js"></script>
+    <script src="https://kit.fontawesome.com/489ebd9a8c.js" crossorigin="anonymous"></script>
+    <script src="/src/home/nav.js"></script>
+    
+    <script src="/src/EditKitchens/swiper.js"></script>
+    
+</body>
+</html>

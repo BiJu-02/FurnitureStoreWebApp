@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
+    <meta name="author" content="Radiance Kitchens and Furnitures">
+    <meta name="description"
+        content="Explore our range of custom-designed Classic, Contemporary, and Modern kitchens. Discover kitchen design ideas, photos, and descriptions. Contact us for a free consultation.">
+    <meta name="keywords" content="Radiance Kitchens and Furnitures,
+    Custom-designed,
+    Classic kitchens,
+    Contemporary kitchens,
+    Modern kitchens,
+    Design ideas,
+    Photos,
+    Descriptions,
+    Contact">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <title>
+        <% if (pageData["type"] == "k") { %>
+        Discover Modular Kitchens by Radiance Kitchens and Wardrobes - Your One-Stop Solution for Premium and Stylish Modular Kitchens in India
+        <% } else { %>
+        Customizable Wardrobes by Radiance Kitchens and Wardrobes - Maximize your Storage Space with our Top Class Wardrobe Models
+        <% } %>
+    </title>
+    <link rel="stylesheet" href="/css/kitchens/kitchens.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+      <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+
+<body>
+
+    <section id="nav">
+
+        
+        <div class="toggle">
+           <img src="/assets/images/home_page/icons8-close.svg" class="hidden" id="cancel">
+            <span class="bar1" id="bar1"></span>
+            <span class="bar1" id="bar2"></span>
+            <span class="bar1" id="bar3"></span>
+        </div>
+
+        <div class="mob_logo">
+            <a href="/index.html"><img src="/assets/images/home_page/radiance_logo.png" alt=""></a>
+        </div>
+
+        <div class="bar">
+
+            <div class="links nav_1">
+                <ul>
+                    <li><a href="./kitchenWardrobePage?kwType=k" class="nav_title">Kitchens</a></li>
+                    <li><a href="./kitchenWardrobePage?kwType=w" class="nav_title">Wardrobes</a></li>
+                </ul>
+            </div>
+            <div class="logo">
+                <a href="/index.html"><img src="/assets/images/home_page/radiance_logo.png" alt=""></a>
+            </div>
+            <div class="links">
+                <ul>
+
+                    <li><a href="./blogList" class="nav_title">Our blog</a></li>
+                    <li>
+                        <div class="dropdown">
+                            <button onclick="myFunction()" class="dropbtn">Company <i
+                                    class='bx bxs-chevron-down dropbtn'></i> </button>
+                            <div id="myDropdown" class="dropdown-content">
+                                <a href="/aboutus.html">About us</a>
+                                <a href="/history.html">History</a>
+                                <a href="/testimonials.html">Client Testimonials</a>
+                                <a href="/faq.html"> FAQs</a>
+                                <a href="/contactUs.html"> Contact Us</a>
+                            </div>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="hero_text animate__animated animate__fadeIn">
+
+            <h2 class="H1">Discover Our</h2>
+            <h2 class="H2">
+                <% if (pageData["type"] == "k") { %>
+                Kitchens
+                <% } else { %>
+                Wardrobes
+                <% } %>
+            </h2>
+            <p>
+                <% if (pageData["type"] == "k") { %>
+                Experience the world of modular kitchens like never before - Discover a range of stylish and functional
+                kitchen models with Radiance Kitchens.
+                <% } else { %>
+                Discover the endless possibilities of wardrobe models with Radiance Kitchens - Let's transform your space together!
+                <% } %>
+            </p>
+    
+        </div>
+
+    </section>
+
+    
+
+    <div class="kitchens_display">
+        <div class="box_left kitchen_box animate__animated animate__fadeInUp">
+            <!-- onclick string parameter problem -->
+            <img src="<%= pageData["mrq"]["0"] %>" alt="" id="mrq0">
+            <button id="btn0" class="black_btn" <% if (pageData["mrq"]["0"].length) {%> 
+            onclick="goToContent('<%=pageData["type"]%>', 'mrq', '0')" <% } %> >Go to <% if (pageData["type"] == "k") { %>
+        Kitchen
+        <% } else { %>
+        Wardrobe
+        <% } %></button>
+        </div>
+        <div class="box_center kitchen_box animate__animated animate__fadeInUp">
+            <img src="<%= pageData["mrq"]["1"] %>" alt="" id="mrq1">
+            <button id="btn1" class="black_btn" <% if (pageData["mrq"]["1"].length) {%> 
+            onclick="goToContent('<%=pageData["type"]%>', 'mrq', '1')" <% } %> >Go to <% if (pageData["type"] == "k") { %>
+        Kitchen
+        <% } else { %>
+        Wardrobe
+        <% } %></button>
+        </div>
+        <div class="box_right kitchen_box animate__animated animate__fadeInUp">
+            <img src="<%= pageData["mrq"]["2"] %>" alt="" id="mrq2">
+            <button id="btn2"class="black_btn" <% if (pageData["mrq"]["2"].length) {%> 
+            onclick="goToContent('<%=pageData["type"]%>', 'mrq', '2')" <% } %> >Go to <% if (pageData["type"] == "k") { %>
+        Kitchen
+        <% } else { %>
+        Wardrobe
+        <% } %></button>
+        </div>
+    </div>
+
+
+    <section id="kt">
+        <div id="kitchen_type">
+
+            <div class="part1">
+                <img src="/assets/images/kitchens_page/disp_kitchen_modern.png" alt="">
+            </div>
+            <div class="part2">
+                <h2><% if (pageData["type"] == "k") { %>
+        Classic Kitchen
+        <% } else { %>
+        Walk in Wardrobe
+        <% } %></h2>
+                <p>
+                    <% if (pageData["type"] == "k") { %>
+        "Experience timeless elegance and sophistication with our Classic kitchen models - designed to last a
+                    lifetime."
+        <% } else { %>
+        "Step into luxury with our bespoke walk-in wardrobe models, designed to cater to your every need."
+        <% } %>
+                </p>
+
+                <div class="kt_img">
+                    <img src="<%= pageData["cls"]["0"] %>" <% if (pageData["cls"]["0"].length) {%> 
+                    onclick="goToContent('<%=pageData["type"]%>', 'cls', '0')" <% } %> alt="" id="cls0">
+                    <img src="<%= pageData["cls"]["1"] %>" <% if (pageData["cls"]["1"].length) {%> 
+                    onclick="goToContent('<%=pageData["type"]%>', 'cls', '1')" <% } %> alt="" id="cls1">
+                    <img src="<%= pageData["cls"]["2"] %>" <% if (pageData["cls"]["2"].length) {%> 
+                    onclick="goToContent('<%=pageData["type"]%>', 'cls', '2')" <% } %> alt="" id="cls2">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div id="kitchen_type">
+
+            <div class="part1">
+                <img src="/assets/images/kitchens_page/disp_kitchen_contemporary.png" alt="">
+            </div>
+            <div class="part2">
+                <h2><% if (pageData["type"] == "k") { %>
+        Contemporary Kitchen
+        <% } else { %>
+        Hinged Door Wardrobe
+        <% } %></h2>
+                <p><% if (pageData["type"] == "k") { %>
+        "Sleek lines, minimalist design, and bold finishes - our Contemporary kitchen models are perfect for
+                    the modern-day home."
+        <% } else { %>
+        "Experience elegance and practicality with our hinged door wardrobe models, crafted to suit your unique style."
+        <% } %>
+                </p>
+
+                <div class="kt_img">
+                    <img src="<%= pageData["cnt"]["0"] %>" <% if (pageData["cnt"]["0"].length) {%> 
+                    onclick="goToContent('<%=pageData["type"]%>', 'cnt', '0')" <% } %> alt="" id="cnt0">
+                    <img src="<%= pageData["cnt"]["1"] %>" <% if (pageData["cnt"]["1"].length) {%> 
+                    onclick="goToContent('<%=pageData["type"]%>', 'cnt', '1')" <% } %> alt="" id="cnt1">
+                    <img src="<%= pageData["cnt"]["2"] %>" <% if (pageData["cnt"]["2"].length) {%> 
+                    onclick="goToContent('<%=pageData["type"]%>', 'cnt', '2')" <% } %> alt="" id="cnt2">
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        
+        <div id="kitchen_type">
+
+            <div class="part1">
+                <img src="/assets/images/kitchens_page/disp_kitchen_classic.png" alt="">
+            </div>
+            <div class="part2">
+                <h2><% if (pageData["type"] == "k") { %>
+        Modern Kitchen
+        <% } else { %>
+        Sliding Wardrobe
+        <% } %></h2>
+                <p><% if (pageData["type"] == "k") { %>
+        "Stay ahead of the curve with our Modern kitchen models - where form meets function for the ultimate
+                    culinary experience."
+        <% } else { %>
+        "Maximize your space with our sleek and functional sliding wardrobe models, tailored to fit your lifestyle."
+        <% } %>
+                </p>
+
+                <div class="kt_img">
+                    <img src="<%= pageData["mdn"]["0"] %>" <% if (pageData["mdn"]["0"].length) {%> 
+                    onclick="goToContent('<%=pageData["type"]%>', 'mdn', '0')" <% } %> alt="" id="mdn0">
+                    <img src="<%= pageData["mdn"]["1"] %>" <% if (pageData["mdn"]["1"].length) {%> 
+                    onclick="goToContent('<%=pageData["type"]%>', 'mdn', '1')" <% } %> alt="" id="mdn1">
+                    <img src="<%= pageData["mdn"]["2"] %>" <% if (pageData["mdn"]["2"].length) {%> 
+                    onclick="goToContent('<%=pageData["type"]%>', 'mdn', '2')" <% } %> alt="" id="mdn2">
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+    
+    <footer>
+        <div class="foot-logo">
+            <img src="/assets/images/home_page/radiance_logo.png" alt="">
+        </div>
+
+        <div class="foot-links">
+
+            <div class="col">
+                <a href="./kitchenWardrobePage?kwType=k">
+                    <h2>Kitchen</h2>
+                </a>
+
+                <a href="./kitchenWardrobePage?kwType=w">
+                    <h2>Wardrobe</h2>
+                </a>
+                <a href="./blogList">
+                    <h2>Our Blog</h2>
+                </a>
+            </div>
+
+            <div class="col">
+                <h2>Company</h2>
+                <a href="/aboutus.html">
+                    <p>About us</p>
+                </a>
+                <a href="/history.html">
+                    <p>History</p>
+                </a>
+                <a href="/testimonials.html">
+                    <p>Client Testimonial</p>
+                </a>
+                <a href="/faq.html">
+                    <p>Faqs</p>
+                </a>
+                <a href="/contactUs.html">
+                    <p>Contact us</p>
+                </a>
+
+
+            </div>
+
+            <div class="col">
+                <h2>Contact us</h2>
+
+                <p> +91 98505 60095</p>
+                <p>radiancekitchensofficials@gmail.com</p>
+
+
+            </div>
+
+            <div class="col">
+                <h2>Our socials</h2>
+
+                <a href="https://instagram.com/radiancekitchensandfurniture?igshid=YmMyMTA2M2Y="> <i
+                        class="fa-brands fa-square-instagram"></i></a>
+                <a
+                    href="https://www.facebook.com/214920678535903/posts/pfbid0CwHAoYt6YpgQf6ReM9rYjaU6eDjSLz2rpbfmNmSVtuoxQUm9HXf1FtLhwk7eeWjql/?mibextid=Nif5oz">
+                    <i class="fa-brands fa-square-facebook"></i></a>
+                <a href="https://www.linkedin.com/company/radiance-kitechens-furnitures/
+               "> <i class="fa-brands fa-linkedin"></i></a>
+                <a href="/contactUs.html"> <i class="fa-sharp fa-solid fa-envelope"></i></a>
+            </div>
+
+
+
+            <div class="col">
+                <h2>Locate our store <i class='bx bx-current-location'></i></h2>
+                <iframe class="map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30264.703866569707!2d73.80774527611592!3d18.524925794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf2c413fc991%3A0xe4bed2ae01d59dde!2sRadiance%20Kitchens%20and%20Furnitures!5e0!3m2!1sen!2sin!4v1677150696308!5m2!1sen!2sin"
+                    width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        </div>
+        </div>
+    </footer>
+
+
+</body>
+<script type="text/javascript">
+    function goToContent(type, subType, idx) {
+        window.location = `http://radiancekitchens.com/radapi/contentPage?kwType=${type}&kwSubType=${subType}&kwIdx=${idx}`;
+    }
+</script>
+<script src="https://kit.fontawesome.com/489ebd9a8c.js" crossorigin="anonymous"></script>
+<script src="/src/home/nav.js"></script>
+
+
+</html>

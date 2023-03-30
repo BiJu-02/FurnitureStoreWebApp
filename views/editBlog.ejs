@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Radiance Kitchens and Furnitures">
+    <title>Edit Blog</title>
+    <!-- Include stylesheet -->
+    <link rel="stylesheet" href="/css/editBlog/editBlog.css">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+</head>
+
+<body onload="initPage('<%= Id %>')">
+    <section id="nav">
+
+        <div class="toggle">
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+        </div>
+
+        <div class="mob_logo">
+            <a href="./adminHome"><img src="/assets/images/home_page/radiance_logo.png" alt=""></a>
+        </div>
+
+        <div class="bar">
+
+            <div class="links nav_1">
+                <ul>
+                    <li><a href="./manageKWContent?kwType=k" class="nav_title">Kitchens</a></li>
+                    <li><a href="./manageKWContent?kwType=w" class="nav_title">Wardrobes</a></li>
+                </ul>
+            </div>
+            <div class="logo">
+                <a href="./adminHome"><img src="/assets/images/home_page/radiance_logo.png" alt=""></a>
+            </div>
+            <div class="links">
+                <ul>
+
+                    <li><a href="./adminHome" class="nav_title">Manage blog</a></li>
+                    <li><a href="./logOut" class="nav_title">Log Out</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+
+
+
+    </section>
+
+
+    <section id="createBlog">
+        
+        <h2>Create/Edit Blog</h2>
+           
+        <form action="">
+            
+            <div class="img">
+                <div id="new_img"><img id="blog-img" src=""></div>
+                <input type="file" accept="image/jpg image/png image/jpeg" id="input-image" onchange="loadImg()">
+            </div>
+
+            <div class="part1">               
+                <input type="text" id="blog-title" placeholder="Enter the blog title">
+               <div id="editor">
+  
+               </div>
+            </div>
+        </form>
+            <button onclick="saveBlog()" id="Save">Save</button>
+          
+        
+        <p id="form-status"></p>
+    </section>
+    <!-- Create the editor container -->
+
+    
+    <script src="./scripts/blog.js"></script>
+
+
+</body>
+
+</html>

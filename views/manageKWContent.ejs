@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit <% if (pageData["type"] == "k") { %>
+                Kitchens
+                <% } else { %>
+                Wardrobes
+                <% } %></title>
+    <link rel="stylesheet" href="/css/Manage Kitchens/editKitchen.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <section id="nav">
+
+        <div class="toggle">
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+        </div>
+
+        <div class="mob_logo">
+            <a href="./adminHome"><img src="/assets/images/home_page/radiance_logo.png" alt=""></a>
+        </div>
+
+        <div class="bar">
+
+            <div class="links nav_1">
+                <ul>
+                    <li><a href="./manageKWContent?kwType=k" class="nav_title">Kitchens</a></li>
+                    <li><a href="./manageKWContent?kwType=w" class="nav_title">Wardrobes</a></li>
+                </ul>
+            </div>
+            <div class="logo">
+                <a href="./adminHome"><img src="/assets/images/home_page/radiance_logo.png" alt=""></a>
+            </div>
+            <div class="links">
+                <ul>
+
+                    <li><a href="./adminHome" class="nav_title">Manage blog</a></li>
+                    <li><a href="./logOut" class="nav_title">Log Out</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+
+
+
+    </section>
+
+    <section id="main-sec">
+        <div class="card">
+            <div class="content-img">
+            <img src="<%= pageData["mrq"]["0"]["img"] %>" alt="Not Created Yet">
+            </div>
+            <a href="<%= pageData["mrq"]["0"]["url"] %>"><p>Edit <% if (pageData["type"] == "k") { %>
+        Marquee Kitchen
+        <% } else { %>
+        Marquee Wardrobe
+        <% } %> 1</p> </a>
+            <a class="trash"><i class='bx bxs-trash' onclick="deleteKW(<%= pageData["mrq"]["0"]["delOpt"] %>)"></i></a>
+        </div>
+        
+        <div class="card">
+            <div class="content-img">
+               <img src="<%= pageData["mrq"]["1"]["img"] %>" alt="Not Created Yet">
+            </div>
+            <a href="<%= pageData["mrq"]["1"]["url"] %>"><p>Edit <% if (pageData["type"] == "k") { %>
+        Marquee Kitchen
+        <% } else { %>
+        Marquee Wardrobe
+        <% } %> 2</p> </a>
+            <a class="trash"><i class='bx bxs-trash' onclick="deleteKW(<%= pageData["mrq"]["1"]["delOpt"] %>)"></i></a>
+        </div>
+
+        <div class="card">
+            <div class="content-img">
+            <img src="<%= pageData["mrq"]["2"]["img"] %>" alt="Not Created Yet">
+            </div>
+            <a href="<%= pageData["mrq"]["2"]["url"] %>"><p>Edit <% if (pageData["type"] == "k") { %>
+        Marquee Kitchen
+        <% } else { %>
+        Marquee Wardrobe
+        <% } %> 3</p> </a>
+            <a class="trash"><i class='bx bxs-trash' onclick="deleteKW(<%= pageData["mrq"]["2"]["delOpt"] %>)"></i></a>
+        </div>
+
+        <div class="card">
+
+            <div class="content-img">
+            <img src="<%= pageData["cls"]["0"]["img"] %>" alt="Not Created Yet">
+            </div>
+            <a href="<%= pageData["cls"]["0"]["url"] %>"><p>Edit <% if (pageData["type"] == "k") { %>
+        Classic Kitchen
+        <% } else { %>
+        Walk in Wardrobe
+        <% } %> 1</p> </a>
+            <a class="trash"><i class='bx bxs-trash' onclick="deleteKW(<%= pageData["cls"]["0"]["delOpt"] %>)"></i></a>
+        </div>
+
+        <div class="card">
+            <div class="content-img">
+                <img src="<%= pageData["cls"]["1"]["img"] %>" alt="Not Created Yet">
+            </div>
+
+            <a href="<%= pageData["cls"]["1"]["url"] %>"><p>Edit <% if (pageData["type"] == "k") { %>
+            Classic Kitchen
+            <% } else { %>
+            Walk in Wardrobe
+            <% } %> 2</p> </a>
+            <a class="trash"><i class='bx bxs-trash' onclick="deleteKW(<%= pageData["cls"]["1"]["delOpt"] %>)"></i></a>
+        </div>
+
+        <div class="card">
+            <div class="content-img">
+                <img src="<%= pageData["cls"]["2"]["img"] %>" alt="Not Created Yet">
+            </div>
+            <a href="<%= pageData["cls"]["2"]["url"] %>"><p>Edit <% if (pageData["type"] == "k") { %>
+        Classic Kitchen
+        <% } else { %>
+        Walk in Wardrobe
+        <% } %> 3</p> </a>
+            <a class="trash"><i class='bx bxs-trash' onclick="deleteKW(<%= pageData["cls"]["2"]["delOpt"] %>)"></i></a>
+        </div>
+
+        <div class="card">
+            <div class="content-img">
+                <img src="<%= pageData["cnt"]["0"]["img"] %>" alt="Not Created Yet">
+            </div>
+            <a href="<%= pageData["cnt"]["0"]["url"] %>"><p>Edit <% if (pageData["type"] == "k") { %>
+        Contemporary Kitchen
+        <% } else { %>
+        Hinged Door Wardrobe
+        <% } %> 1</p> </a>
+            <a class="trash"><i class='bx bxs-trash' onclick="deleteKW(<%= pageData["cnt"]["0"]["delOpt"] %>)"></i></a>
+        </div>
+        
+        <div class="card">
+            <div class="content-img">
+              <img src="<%= pageData["cnt"]["1"]["img"] %>" alt="Not Created Yet">
+            </div>
+            <a href="<%= pageData["cnt"]["1"]["url"] %>"><p>Edit <% if (pageData["type"] == "k") { %>
+        Contemporary Kitchen
+        <% } else { %>
+        Hinged Door Wardrobe
+        <% } %> 2</p> </a>
+            <a class="trash"><i class='bx bxs-trash' onclick="deleteKW(<%= pageData["cnt"]["1"]["delOpt"] %>)"></i></a>
+        </div>
+
+        <div class="card">
+            <div class="content-img">
+                <img src="<%= pageData["cnt"]["2"]["img"] %>" alt="Not Created Yet">
+            </div>
+            <a href="<%= pageData["cnt"]["2"]["url"] %>"><p>Edit <% if (pageData["type"] == "k") { %>
+        Contemporary Kitchen
+        <% } else { %>
+        Hinged Door Wardrobe
+        <% } %> 3</p> </a>
+            <a class="trash"><i class='bx bxs-trash' onclick="deleteKW(<%= pageData["cnt"]["2"]["delOpt"] %>)"></i></a>
+        </div>
+
+        <div class="card">
+            <div class="content-img">
+                <img src="<%= pageData["mdn"]["0"]["img"] %>" alt="Not Created Yet">
+            </div>
+            <a href="<%= pageData["mdn"]["0"]["url"] %>"><p>Edit <% if (pageData["type"] == "k") { %>
+        Modern Kitchen
+        <% } else { %>
+        Sliding Wardrobe
+        <% } %> 1</p> </a>
+            <a class="trash"><i class='bx bxs-trash' onclick="deleteKW(<%= pageData["mdn"]["0"]["delOpt"] %>)"></i></a>
+        </div>
+
+        <div class="card">
+            <div class="content-img">
+                <img src="<%= pageData["mdn"]["1"]["img"] %>" alt="Not Created Yet">
+            </div>
+            <a href="<%= pageData["mdn"]["1"]["url"] %>"><p>Edit <% if (pageData["type"] == "k") { %>
+        Modern Kitchen
+        <% } else { %>
+        Sliding Wardrobe
+        <% } %> 2</p> </a>
+            <a class="trash"><i class='bx bxs-trash' onclick="deleteKW(<%= pageData["mdn"]["1"]["delOpt"] %>)"></i></a>
+        </div>
+
+        <div class="card">
+            <div class="content-img">
+                <img src="<%= pageData["mdn"]["2"]["img"] %>" alt="Not Created Yet">
+            </div>
+            <a href="<%= pageData["mdn"]["2"]["url"] %>"><p>Edit <% if (pageData["type"] == "k") { %>
+        Modern Kitchen
+        <% } else { %>
+        Sliding Wardrobe
+        <% } %> 3</p> </a>
+            <a class="trash"><i class='bx bxs-trash' onclick="deleteKW(<%= pageData["mdn"]["2"]["delOpt"] %>)"></i></a>
+        </div>
+
+    </section>
+
+
+
+    <script src="/src/home/nav.js"></script>
+    <script src="./scripts/delKW.js"></script>
+    <script src="https://kit.fontawesome.com/489ebd9a8c.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
