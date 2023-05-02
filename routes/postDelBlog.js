@@ -20,14 +20,24 @@ router.post("/postDelBlog", async (req, res) => {
 		try {
 			const { rm, access } = require("node:fs/promises");
 			const { join } = require("node:path");
-			const blogImgDir = join(__dirname, "..", "public", "images", "blogImg", req.body.Id);
-			await access(blogImgDir)
+			let blogImgDir = join(__dirname, "..", "public", "images", "blogImg", req.body.Id);
 			try {
+				await access(blogImgDir)
 				await rm(blogImgDir, { recursive: true });
 			} catch {
-				res.send({err: "image deletion failed"});
+				res.send({err: "thumb image deletion failed"});
 			}
-		} catch {}
+			blogImgDir = join(__dirname, "..", "public", "images", "blogImgArr", req.body.Id);
+			try {
+				await access(blogImgDir)
+				await rm(blogImgDir, { recursive: true });
+			} catch {
+				res.send({err: "image array deletion failed"});
+			}
+		} catch(e) {
+			console.log(e);
+			res.send({err: "program errored"})
+		}
 		res.send({deletionSuccess: true});
 	} else {
 		res.send({err: "postDelBlog body incorrect no Id received"});

@@ -9,7 +9,7 @@
     <meta name="description"
         content="Explore our range of custom-designed Classic, Contemporary, and Modern kitchens. Discover kitchen design ideas, photos, and descriptions. Contact us for a free consultation.">
     <meta name="keywords" content="Radiance Kitchens and Furnitures,
-    Custom-designed,
+    Best Modular Kitchens, Best Modular Kitchens and Wardrobes,Custom-designed,
     Classic kitchens,
     Contemporary kitchens,
     Modern kitchens,
@@ -27,90 +27,89 @@
     </title>
     <link rel="stylesheet" href="/css/kitchens/kitchens.css">
     <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="/css/navbar/nav.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-      <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+   
 </head>
 
 <body>
 
-    <section id="nav">
+     <a href="https://wa.me/9822531000" class="float" target="_blank">
+            <i class="fa fa-whatsapp my-float"></i>
+    </a>
+
+ <div id="nav">
+            <div class="toggle">
+                <img src="../assets/images/home_page/icons8-close.svg" class="hidden" id="cancel">
+                <span class="bar1" id="bar1"></span>
+                <span class="bar1" id="bar2"></span>
+                <span class="bar1" id="bar3"></span>
+            </div>
+    
+            <div class="mob_logo">
+                <a href="/index.html"><img src="../assets/images/home_page/logo/L1.png" alt=""></a>
+            </div>
+    
+            <div class="bar">
+    
+             
+                <div class="links nav_1">
+                    <ul>
+                        <li>                          
+                            <a href="../index.html"><img src="../assets/images/home_page/logo/RadianceLogo.png" alt="" class="logo"></a>
+                        </li>
+
+                        <li><a href="https://radiancekitchens.com/radapi/kitchenWardrobePage?kwType=k" class="nav_title">Kitchens</a></li>
+                        <li><a href="https://radiancekitchens.com/radapi/kitchenWardrobePage?kwType=w" class="nav_title">Wardrobes</a></li>
+                        <li><a href="https://radiancekitchens.com/radapi/blogList" class="nav_title">Our blog</a></li>
+                        <li>
+                            <div class="dropdown">
+                                <button onclick="myFunction()" class="dropbtn">Company <i
+                                        class='bx bxs-chevron-down dropbtn'></i> </button>
+                                <div id="myDropdown" class="dropdown-content">
+                                    <a href="../aboutus.html">About us</a>
+                                    <a href="../history.html">History</a>
+                                    <a href="../testimonials.html">Client Testimonials</a>
+                                    <a href="../faq.html"> FAQs</a>
+                                    <a href="../contactUs.html"> Contact Us</a>
+                                </div>
+                            </div>
+    
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+
+
+     <section id="Hero">
+       
+        <% if (pageData["type"] == "k") { %>
+        <div class="Kitchen-head-txt" data-aos="slide-left">
+            <h2>Discover Our </h2>
+            <h2>Kitchen Models</h2>
+            <p>No two kitchens are the same. Be inspired by our different styles, colours and room layouts. Get ideas for your dream kitchen</p>
+        </div>
+        <% } else { %>
+          <div class="Kitchen-head-txt" data-aos="slide-left">
+            <h2>Discover Our </h2>
+            <h2>Wardrobe Models</h2>
+            <p>Discover the endless possibilities of wardrobe models with Radiance Kitchens - Let's transform your space together!</p>
+        </div>
+        
+        
+        <% } %>
 
         
-        <div class="toggle">
-           <img src="/assets/images/home_page/icons8-close.svg" class="hidden" id="cancel">
-            <span class="bar1" id="bar1"></span>
-            <span class="bar1" id="bar2"></span>
-            <span class="bar1" id="bar3"></span>
-        </div>
 
-        <div class="mob_logo">
-            <a href="/index.html"><img src="/assets/images/home_page/radiance_logo.png" alt=""></a>
-        </div>
-
-        <div class="bar">
-
-            <div class="links nav_1">
-                <ul>
-                    <li><a href="./kitchenWardrobePage?kwType=k" class="nav_title">Kitchens</a></li>
-                    <li><a href="./kitchenWardrobePage?kwType=w" class="nav_title">Wardrobes</a></li>
-                </ul>
-            </div>
-            <div class="logo">
-                <a href="/index.html"><img src="/assets/images/home_page/radiance_logo.png" alt=""></a>
-            </div>
-            <div class="links">
-                <ul>
-
-                    <li><a href="./blogList" class="nav_title">Our blog</a></li>
-                    <li>
-                        <div class="dropdown">
-                            <button onclick="myFunction()" class="dropbtn">Company <i
-                                    class='bx bxs-chevron-down dropbtn'></i> </button>
-                            <div id="myDropdown" class="dropdown-content">
-                                <a href="/aboutus.html">About us</a>
-                                <a href="/history.html">History</a>
-                                <a href="/testimonials.html">Client Testimonials</a>
-                                <a href="/faq.html"> FAQs</a>
-                                <a href="/contactUs.html"> Contact Us</a>
-                            </div>
-                        </div>
-
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-
-        <div class="hero_text animate__animated animate__fadeIn">
-
-            <h2 class="H1">Discover Our</h2>
-            <h2 class="H2">
-                <% if (pageData["type"] == "k") { %>
-                Kitchens
-                <% } else { %>
-                Wardrobes
-                <% } %>
-            </h2>
-            <p>
-                <% if (pageData["type"] == "k") { %>
-                Experience the world of modular kitchens like never before - Discover a range of stylish and functional
-                kitchen models with Radiance Kitchens.
-                <% } else { %>
-                Discover the endless possibilities of wardrobe models with Radiance Kitchens - Let's transform your space together!
-                <% } %>
-            </p>
-    
-        </div>
 
     </section>
 
-    
-
     <div class="kitchens_display">
-        <div class="box_left kitchen_box animate__animated animate__fadeInUp">
+        <div class="box_left kitchen_box " data-aos="slide-up">
             <!-- onclick string parameter problem -->
             <img src="<%= pageData["mrq"]["0"] %>" alt="" id="mrq0">
             <button id="btn0" class="black_btn" <% if (pageData["mrq"]["0"].length) {%> 
@@ -120,7 +119,7 @@
         Wardrobe
         <% } %></button>
         </div>
-        <div class="box_center kitchen_box animate__animated animate__fadeInUp">
+        <div class="box_center kitchen_box " data-aos="slide-up">
             <img src="<%= pageData["mrq"]["1"] %>" alt="" id="mrq1">
             <button id="btn1" class="black_btn" <% if (pageData["mrq"]["1"].length) {%> 
             onclick="goToContent('<%=pageData["type"]%>', 'mrq', '1')" <% } %> >Go to <% if (pageData["type"] == "k") { %>
@@ -129,7 +128,7 @@
         Wardrobe
         <% } %></button>
         </div>
-        <div class="box_right kitchen_box animate__animated animate__fadeInUp">
+        <div class="box_right kitchen_box " data-aos="slide-up">
             <img src="<%= pageData["mrq"]["2"] %>" alt="" id="mrq2">
             <button id="btn2"class="black_btn" <% if (pageData["mrq"]["2"].length) {%> 
             onclick="goToContent('<%=pageData["type"]%>', 'mrq', '2')" <% } %> >Go to <% if (pageData["type"] == "k") { %>
@@ -142,10 +141,10 @@
 
 
     <section id="kt">
-        <div id="kitchen_type">
+        <div id="kitchen_type" data-aos="zoom-out">
 
             <div class="part1">
-                <img src="/assets/images/kitchens_page/disp_kitchen_modern.png" alt="">
+                <img src="/assets/images/kitchens_page/disp_kitchen_modern.jpg" alt="">
             </div>
             <div class="part2">
                 <h2><% if (pageData["type"] == "k") { %>
@@ -176,10 +175,10 @@
         </div>
 
 
-        <div id="kitchen_type">
+        <div id="kitchen_type" data-aos="zoom-out">
 
             <div class="part1">
-                <img src="/assets/images/kitchens_page/disp_kitchen_contemporary.png" alt="">
+                <img src="/assets/images/kitchens_page/disp_kitchen_contemporary.jpg" alt="">
             </div>
             <div class="part2">
                 <h2><% if (pageData["type"] == "k") { %>
@@ -211,10 +210,10 @@
 
 
         
-        <div id="kitchen_type">
+        <div id="kitchen_type" data-aos="zoom-out">
 
             <div class="part1">
-                <img src="/assets/images/kitchens_page/disp_kitchen_classic.png" alt="">
+                <img src="/assets/images/kitchens_page/disp_kitchen_classic.jpg" alt="">
             </div>
             <div class="part2">
                 <h2><% if (pageData["type"] == "k") { %>
@@ -246,6 +245,13 @@
     </section>
 
 
+
+<section id="foot-msg">
+        <h2 class="scroll-animation " data-aos="slide-right">LOOKING TO BRING THE MOST BEAUTIFUL KITCHEN HOME?</h2>
+        <h2 class="scroll-animation " data-aos="slide-left">LOOKING TO RENOVATE INTO A RADIANT KITCHEN?</h2 data-aos="flip-right">
+        <hr>
+        <a href="/contactUs.html">Contact Us</a>
+    </section>
 
 
     
@@ -281,7 +287,7 @@
                     <p>Client Testimonial</p>
                 </a>
                 <a href="/faq.html">
-                    <p>Faqs</p>
+                    <p>FAQs</p>
                 </a>
                 <a href="/contactUs.html">
                     <p>Contact us</p>
@@ -335,6 +341,10 @@
 </script>
 <script src="https://kit.fontawesome.com/489ebd9a8c.js" crossorigin="anonymous"></script>
 <script src="/src/home/nav.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
 
 </html>

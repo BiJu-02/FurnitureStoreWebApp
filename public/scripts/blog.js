@@ -1,7 +1,7 @@
 
 let blogId = null;
-let imgDataUrl = "";
-let quill = null;
+let imgDataUrl = [];
+let quill = [];
 
 var toolbarOptions = [
     ['bold', 'italic', 'underline', 'link'],        // toggled buttons
@@ -12,16 +12,21 @@ var toolbarOptions = [
 
     [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
 ];
-quill = new Quill('#editor', {
-    modules: { toolbar: toolbarOptions },
-    theme: 'snow'
-});
+
+
+for (let i=0; i<5; i++) {
+    quill[i] = new Quill(`#editor${i+1}`, {
+        modules: { toolbar: toolbarOptions },
+        theme: 'snow'
+    });
+    imgDataUrl[i] = "";
+}
+
+
 
 
 
 async function initPage(Id) {
-    
-
     // get blog and load quill.root.innerhtml
     if (Id.length) {
         blogId = Id;
@@ -36,20 +41,22 @@ async function initPage(Id) {
         const resp = await rawResp.json();
         console.log(resp);
         document.getElementById("blog-title").value = resp.blog.bHead;
-        quill.root.innerHTML = resp.blog.bCont;
-        document.getElementById("blog-img").src = resp.img;
+        for (let i=0; i<5; i++) {
+            if (resp.blog.bCont[i].length) { quill[i].root.innerHTML = resp.blog.bCont[i]; }
+            if (resp.img[i].length) { document.getElementById(`blog-img${i+1}`).src = resp.img[i]; }
+        }
     }
 }
 
 
-async function loadImg() {
-    const file = document.getElementById("input-image").files[0];
+async function loadImg(file_id, img_id, idx) {
+    const file = document.getElementById(file_id).files[0];
     const reader = new FileReader();
 
     reader.addEventListener("load", () => {
-        imgDataUrl = reader.result;
-        console.log(imgDataUrl);
-        document.getElementById("blog-img").setAttribute("src", imgDataUrl);
+        imgDataUrl[idx] = reader.result;
+        console.log(imgDataUrl[idx].length);
+        document.getElementById(img_id).setAttribute("src", imgDataUrl[idx]);
     })
 
     if (file) {
@@ -60,7 +67,11 @@ async function loadImg() {
 
 async function saveBlog() {
     document.getElementById("form-status").innerHTML = "submitting...";
-    const blogText = quill.root.innerHTML;
+    const blogText = [];
+    for (let x of quill) {
+        blogText.push(x.root.innerHTML);
+    }
+    console.log(blogText);
     const headerList = {
         "Accept": "*/*",
         "Content-Type": "application/json"
@@ -91,20 +102,40 @@ async function saveBlog() {
         console.log("ded");
         return;
     }
-    console.log("img size", imgDataUrl.length);
+
     if (!imgDataUrl) { alert("post saved"); return; }
-    const rawResp2 = await fetch("https://radiancekitchens.com/radapi/postBlogImg", {
-        method: "POST",
-        headers: headerList,
-        body: JSON.stringify({img: imgDataUrl, Id: blogId})
-    });
-    const resp2 = await rawResp2.json();
-    console.log(resp2);
-    if (resp2.err) {
-        console.log("image not uploaded");
+
+    let promArr = [];
+
+    if (imgDataUrl[0].length) {
+        promArr.push((async () => {
+            const rawResp2 = await fetch("https://radiancekitchens.com/radapi/postBlogImg", {
+                method: "POST",
+                headers: headerList,
+                body: JSON.stringify({img: imgDataUrl[0], Id: blogId, Type: "t"})
+            });
+            const resp2 = await rawResp2.json();
+            console.log(resp2);
+        })());
     }
-    else {
-        console.log(resp2.data);
+
+    for (let i=1; i<5; i++) {
+        if (!imgDataUrl[i].length) { continue; }
+        promArr.push((async () => {
+            const rawResp2 = await fetch("https://radiancekitchens.com/radapi/postBlogImg", {
+                method: "POST",
+                headers: headerList,
+                body: JSON.stringify({img: imgDataUrl[i], Id: blogId, Idx: `${i}`})
+            });
+            const resp2 = await rawResp2.json();
+            console.log(resp2);
+        })());
     }
-    alert("post saved");
+
+    await Promise.all(promArr);
+
+
+    alert("done");
+    document.getElementById("form-status").innerHTML = "submitted";
+    window.location = "https://radiancekitchens.com/radapi/adminHome";
 }

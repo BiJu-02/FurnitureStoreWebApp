@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta name="author" content="Radiance Kitchens and Furnitures">
+    <meta name="description"
+        content="Discover a world of stylish and functional modular kitchens with Radiance Kitchens. Choose from our range of timeless Classic kitchen models, sleek and modern Contemporary kitchen models, or stay ahead of the curve with our Modern kitchen models where form meets function. In addition to kitchens, we also offer Kitchen Wardrobes and provide expert advice on our blog. Learn more about our company, history, and client testimonials, and get in touch with us today through our FAQs or contact page.">
+    <meta name="keywords"
+        content="Best Modular Kitchens, Best Modular Kitchens and Wardrobes,Best modular kitchens near me,modular kitchens, Radiance Kitchens, Classic kitchen, contemporary kitchen, modern kitchen, form meets function, kitchen wardrobe, expert advice, company, history, client testimonials, FAQs, contact">
     <title><% if (cont.kwType == "k") { %>
         Explore Our Beautiful Kitchen Photo Gallery | <%= cont.kwTitle %>
         <% } else { %>
@@ -15,60 +20,76 @@
     <link rel="stylesheet" href="/css/gotoPage/gotoPage.css">
     <link rel="stylesheet" href="/css/home/swiper-bundle.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/gotoPage/gotoPage.css">
+    <link rel="stylesheet" href="/css/home/swiper-bundle.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="/css/navbar/nav.css">
+    <!-- Schema.org markup for Google rich snippets -->
+    <meta itemprop="name" content="<%= cont.kwTitle %>">
+    <meta itemprop="description" content="<%= cont.kwHead %>">
+    <meta itemprop="image" content="<%= img['00'] %>">
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@publisher_handle">
+    <meta name="twitter:title" content="<%= cont.kwTitle %>">
+    <meta name="twitter:description" content="<%= cont.kwHead %>">
+    <meta name="twitter:image" content="<%= img['00'] %>">
+    <!-- Open Graph data -->
+    <meta property="og:title" content="<%= cont.kwTitle %>">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.example.com/">
+    <meta property="og:image" content="<%= img['00'] %>">
+    <meta property="og:description" content="<%= cont.kwHead %>">
+    <meta property="og:site_name" content="Radiance Kitchens and Furnitures">
+
 </head>
 <body>
 
-    <section id="nav">
-
-        <div class="toggle">
-            <span class="bar1"></span>
-            <span class="bar1"></span>
-            <span class="bar1"></span>
-        </div>
-
-        <div class="mob_logo">
-            <a href="/index.html"><img src="/assets/images/home_page/radiance_logo.png" alt=""></a>
-        </div>
-
-        <div class="bar">
-
-            <div class="links nav_1">
-                <ul>
-                    <li><a href="./kitchenWardrobePage?kwType=k" class="nav_title">Kitchens</a></li>
-                    <li><a href="./kitchenWardrobePage?kwType=w" class="nav_title" >Wardrobes</a></li>
-                </ul>
+     <div id="nav">
+            <div class="toggle">
+                <img src="../assets/images/home_page/icons8-close.svg" class="hidden" id="cancel">
+                <span class="bar1" id="bar1"></span>
+                <span class="bar1" id="bar2"></span>
+                <span class="bar1" id="bar3"></span>
             </div>
-
-            <div class="logo">
-                <a href="/index.html"><img src="/assets/images/home_page/radiance_logo.png" alt=""></a>
+    
+            <div class="mob_logo">
+                <a href="/index.html"><img src="../assets/images/home_page/logo/L1.png" alt=""></a>
             </div>
-            <div class="links">
-                <ul>
+    
+            <div class="bar">
+    
+             
+                <div class="links nav_1">
+                    <ul>
+                        <li>                          
+                            <a href="../index.html"><img src="../assets/images/home_page/logo/RadianceLogo.png" alt="" class="logo"></a>
+                        </li>
 
-                    <li><a href="./blogList" class="nav_title">Our blog</a></li>
-                    <li>
-                        <div class="dropdown">
-                            <button onclick="myFunction()" class="dropbtn">Company <i
-                                    class='bx bxs-chevron-down dropbtn'></i> </button>
-                            <div id="myDropdown" class="dropdown-content">
-                                <a href="/aboutus.html">About us</a>
-                                <a href="/history.html">History</a>
-                                <a href="/testimonials.html">Client Testimonials</a>
-                                <a href="/faq.html"> FAQs</a>
-                                <a href="/contactUs.html"> Contact Us</a>
+                        <li><a href="https://radiancekitchens.com/radapi/kitchenWardrobePage?kwType=k" class="nav_title">Kitchens</a></li>
+                        <li><a href="https://radiancekitchens.com/radapi/kitchenWardrobePage?kwType=w" class="nav_title">Wardrobes</a></li>
+                        <li><a href="https://radiancekitchens.com/radapi/blogList" class="nav_title">Our blog</a></li>
+                        <li>
+                            <div class="dropdown">
+                                <button onclick="myFunction()" class="dropbtn">Company <i
+                                        class='bx bxs-chevron-down dropbtn'></i> </button>
+                                <div id="myDropdown" class="dropdown-content">
+                                    <a href="../aboutus.html">About us</a>
+                                    <a href="../history.html">History</a>
+                                    <a href="../testimonials.html">Client Testimonials</a>
+                                    <a href="../faq.html"> FAQs</a>
+                                    <a href="../contactUs.html"> Contact Us</a>
+                                </div>
                             </div>
-                        </div>
-
-                    </li>
-                </ul>
+    
+                        </li>
+                    </ul>
+                </div>
+                
             </div>
+            
+     </div>
 
-        </div>
-
-        <div class="name">
-            <h2 id="contentTitle"><%= cont.kwTitle %></h2>
-        </div>
-    </section>
 
     
     <section id="main-sec">
@@ -119,6 +140,12 @@
         
         <p id="para2"><%= cont.kwPara2 %></p>
     </section>
+    <section id="foot-msg">
+        <h2 class="scroll-animation ">LOOKING TO BRING THE MOST BEAUTIFUL KITCHEN HOME?</h2>
+        <h2 class="scroll-animation ">LOOKING TO RENOVATE INTO A RADIANT KITCHEN?</h2>
+        <hr>
+        <a href="/contactUs.html">Contact Us</a>
+    </section>
 
     <footer>
         <div class="foot-logo">
@@ -152,7 +179,7 @@
                     <p>Client Testimonial</p>
                 </a>
                 <a href="/faq.html">
-                    <p>Faqs</p>
+                    <p>FAQs</p>
                 </a>
                 <a href="/contactUs.html">
                     <p>Contact us</p>

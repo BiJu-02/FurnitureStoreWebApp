@@ -61,16 +61,54 @@
         <form action="">
             
             <div class="img">
-                <div id="new_img"><img id="blog-img" src=""></div>
-                <input type="file" accept="image/jpg image/png image/jpeg" id="input-image" onchange="loadImg()">
+                <div id="new_img"><img id="blog-img1" src=""></div>
+                <label for="input-image1" class="btn">Select Thumbnail Image</label>
+                <input type="file" accept="image/jpg image/png image/jpeg" id="input-image1" placeholder="thumbnail" onchange="loadImg(`input-image1`, `blog-img1`, 0)">
             </div>
 
             <div class="part1">               
                 <input type="text" id="blog-title" placeholder="Enter the blog title">
-               <div id="editor">
+               <div id="editor1">
   
                </div>
             </div>
+
+             <div class="img">
+                <div id="new_img"><img id="blog-img2" src=""></div>
+                <input type="file" accept="image/jpg image/png image/jpeg" id="input-image2" onchange="loadImg(`input-image2`, `blog-img2`, 1)">
+            </div>
+
+               <div id="editor2">
+  
+               </div>
+
+                 <div class="img">
+                <div id="new_img"><img id="blog-img3" src=""></div>
+                <input type="file" accept="image/jpg image/png image/jpeg" id="input-image3" onchange="loadImg(`input-image3`, `blog-img3`, 2)">
+            </div>
+
+               <div id="editor3">
+  
+               </div>
+
+                 <div class="img">
+                <div id="new_img"><img id="blog-img4" src=""></div>
+                <input type="file" accept="image/jpg image/png image/jpeg" id="input-image4" onchange="loadImg(`input-image4`, `blog-img4`, 3)">
+            </div>
+
+               <div id="editor4">
+  
+               </div>
+
+                 <div class="img">
+                <div id="new_img"><img id="blog-img5" src=""></div>
+                <input type="file" accept="image/jpg image/png image/jpeg" id="input-image5" onchange="loadImg(`input-image5`, `blog-img5`, 4)">
+            </div>
+
+               <div id="editor5">
+  
+               </div>
+
         </form>
             <button onclick="saveBlog()" id="Save">Save</button>
           

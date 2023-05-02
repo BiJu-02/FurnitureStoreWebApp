@@ -30,7 +30,7 @@ router.post("/postKWContImg", async (req, res) => {
     		const imgArr = await readdir(imgDir);
     		for (let img of imgArr) {
     			if (img.startsWith(data.imgIdx)) {
-    				await rm(path.join(imgDir, img))
+    				await rm(path.join(imgDir, img));
     			}
     		}
 			await writeFile(

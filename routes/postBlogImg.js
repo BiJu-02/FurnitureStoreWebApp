@@ -11,23 +11,42 @@ router.post("/postBlogImg", async (req, res) => {
 		res.render("loggedOut");
 		return;
 	}
-	if (req.body?.img && req.body?.Id) {
+	if (req.body?.img && req.body?.Id && (req.body?.Type || req.body?.Idx)) {
 		const imgData = req.body.img.match("data:(image/.*);base64,(.*)");
 		const ext = imgData[1].split("/")[1];
-		const imgDir = join(__dirname, "..", "public", "images", "blogImg", req.body.Id);
+		let imgDir = "";
 
-		try {
-			await access(imgDir);
-			const prevImg = await readdir(imgDir);
-			if (!prevImg.length) { await rm(join(imgDir, prevImg[0])); }
-		} catch { await mkdir(imgDir); }
+		if (req.body.Type == "t") {
+			imgDir = join(__dirname, "..", "public", "images", "blogImg", req.body.Id);
+		} else {
+			imgDir = join(__dirname, "..", "public", "images", "blogImgArr", req.body.Id);
+		}
 
-		await writeFile(
-			join(imgDir, `blogImg.${ext}`),
-			Buffer.from(imgData[2], "base64")
-		);
+		try { await access(imgDir); }
+		catch { await mkdir(imgDir); }
 
-		res.send({data: `${req.body.Id} blog image uploaded`});
+		const prevImg = await readdir(imgDir);
+		console.log(imgDir, prevImg);
+		if (req.body.Type == "t") {
+			if (prevImg.length) { await rm(join(imgDir, prevImg[0])); }
+			await writeFile(
+				join(imgDir, `blogImg.${ext}`),
+				Buffer.from(imgData[2], "base64")
+			);
+			res.send({data: `${req.body.Id} blog thumb image uploaded`});
+		} else {
+			for (let img of prevImg) {
+    			if (img.startsWith(req.body.Idx)) {
+    				await rm(join(imgDir, img));
+    			}
+    		}
+    		await writeFile(
+				join(imgDir, `${req.body.Idx}.${ext}`),
+				Buffer.from(imgData[2], "base64")
+			);
+			res.send({data: `${req.body.Id} blog image ${req.body.Idx} uploaded`});
+		}
+
 	} else {
 		res.send({err: "postBlogImg body incorrect"});
 	}

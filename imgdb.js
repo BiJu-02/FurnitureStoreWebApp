@@ -23,3 +23,37 @@ type.forEach((x) => {
 	});
 });
 
+/*
+type.forEach((x) => {
+	mkdir(
+		join("public", "images", x),
+		(err, path) => {
+			if (err) { console.log(err); }
+			subType.forEach((y) => {
+				mkdir(
+					join("public", "images", x, y),
+					(err, path) => {
+						if (err) { console.log(err); }
+						idx.forEach((z) => {
+							mkdir(
+								join("public", "images", x, y, z),
+								(err, path) => {
+									if (err) { console.log(err); }
+									dirs.forEach((dir) => {
+										mkdir(
+											join("public" ,"images", x, y, z, dir),
+											(err, path) => {
+												if (err) { console.log(err); }
+											}
+										);
+									});
+								}
+							);
+						});
+					}
+				);
+			});
+		}
+	);
+});
+*/
